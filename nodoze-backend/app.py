@@ -79,17 +79,17 @@ def detect_drowsiness():
     if detection_result.face_landmarks:
         landmarks = detection_result.face_landmarks[0]
 
-        # 1. EAR Logic
+        # EAR Logic
         left_ear = get_ear(landmarks, LEFT_EYE)
         right_ear = get_ear(landmarks, RIGHT_EYE)
         ear_value = (left_ear + right_ear) / 2.0
 
-        # 2. Head Tilt Logic
+        # Head Tilt Logic
         nose_ratio = get_head_tilt(landmarks)
 
-        # 3. Combined Trigger
+        # Combined Trigger
         # Triggers if eyes are closed OR head is slumped down
-        # Try bumping 0.65 to 0.75 to make it less sensitive to your desk setup
+        # When the head is tilted down, it's hard to see eyes so do one or the other
         if ear_value < 0.13 or nose_ratio > 0.60:
             is_drowsy = True
 

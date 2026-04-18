@@ -3,7 +3,7 @@ import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Dimensions } from
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '@/constants/styles';
-import type { SessionLog } from '@/app/index';
+import type { SessionLog } from '@/hooks/use-session-logger';
 
 const { width } = Dimensions.get('window');
 const GRAPH_WIDTH = width - 48;

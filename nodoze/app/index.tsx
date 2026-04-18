@@ -33,7 +33,7 @@ export default function HomeScreen() {
   const [isCameraReady, setIsCameraReady] = useState(false);
   const cameraRef = useRef<CameraView>(null);
 
-  const { recordFrame, totalFrames, drowsyFrames, totalAlerts } =
+  const { recordFrame, saveSession, totalFrames, drowsyFrames, totalAlerts } =
     useSessionLogger(isDrowsy, isCameraReady && !showSplash);
 
   // Alarm refs
@@ -130,10 +130,16 @@ export default function HomeScreen() {
     return () => { isMounted = false; };
   }, [permission, isCameraReady, showSplash]);
 
-  const handleTabPress = (key: string) => {
-    setActiveTab(key);
-    if (key === 'alarm') setShowAlarmModal(true);
-  };
+  const handleTabPress = async (key: string) => {
+  setActiveTab(key);
+  if (key === 'alarm') {
+    setShowAlarmModal(true);
+  }
+  if (key === 'log') {
+    await saveSession(); // save before showing log
+  }
+};
+  
 
   if (showSplash) return <SplashScreen onFinish={() => setShowSplash(false)} />;
   if (!permission) return <View style={styles.container} />;
@@ -169,7 +175,7 @@ export default function HomeScreen() {
 
       {/* Log Tab */}
       {activeTab === 'log' ? (
-        <LogScreen />
+        <LogScreen key={activeTab} />
       ) : (
         <>
           {/* Camera */}

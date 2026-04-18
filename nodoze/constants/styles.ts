@@ -284,4 +284,224 @@ export const styles = StyleSheet.create({
     backgroundColor: '#e6394630',
     borderColor: '#e63946',
   },
+
+  //Logs
+  // Log Screen
+logContainer: {
+  flex: 1,
+  paddingHorizontal: 16,
+  paddingTop: 12,
+},
+summaryRow: {
+  flexDirection: 'row' as const,
+  gap: 10,
+  marginBottom: 18,
+},
+summaryCard: {
+  flex: 1,
+  backgroundColor: '#111',
+  borderRadius: 14,
+  padding: 14,
+  alignItems: 'center' as const,
+  borderWidth: 0.5,
+  borderColor: '#1e1e2e',
+},
+summaryValue: {
+  fontSize: 26,
+  fontWeight: '700' as const,
+  color: '#fff',
+},
+summaryLabel: {
+  fontSize: 12,
+  color: '#666',
+  marginTop: 4,
+  textAlign: 'center' as const,
+},
+logSection: {
+  marginBottom: 24,
+},
+sectionHeader: {
+  flexDirection: 'row' as const,
+  justifyContent: 'space-between' as const,
+  alignItems: 'center' as const,
+  marginBottom: 12,
+},
+sectionTitle: {
+  fontSize: 17,
+  fontWeight: '700' as const,
+  color: '#fff',
+  marginBottom: 12,
+},
+clearBtn: {
+  fontSize: 13,
+  color: '#e63946',
+},
+graphContainer: {
+  flexDirection: 'row' as const,
+  height: 210,
+  backgroundColor: '#111',
+  borderRadius: 16,
+  padding: 12,
+  borderWidth: 0.5,
+  borderColor: '#1e1e2e',
+},
+yAxis: {
+  justifyContent: 'space-between' as const,
+  marginRight: 8,
+  height: 160,
+},
+yLabel: {
+  fontSize: 12,
+  color: '#888',
+  fontWeight: '500' as const,
+},
+barsArea: {
+  flex: 1,
+  position: 'relative' as const,
+},
+gridLine: {
+  position: 'absolute' as const,
+  left: 0,
+  right: 0,
+  height: 1,
+  backgroundColor: '#222',
+},
+barsRow: {
+  flexDirection: 'row' as const,
+  alignItems: 'flex-end' as const,
+  height: 160,
+  gap: 6,
+},
+barWrapper: {
+  flex: 1,
+  alignItems: 'center' as const,
+},
+barBg: {
+  width: '100%' as const,
+  backgroundColor: '#1a1a1a',
+  borderRadius: 4,
+  justifyContent: 'flex-end' as const,
+  overflow: 'hidden' as const,
+},
+bar: {
+  width: '100%' as const,
+  borderRadius: 4,
+  minHeight: 2,
+},
+barScore: {
+  fontSize: 10,
+  color: '#aaa',
+  marginTop: 3,
+  fontWeight: '500' as const,
+},
+barLabel: {
+  fontSize: 11,
+  color: '#888',
+  marginTop: 3,
+  fontWeight: '500' as const,
+},
+barAlerts: {
+  fontSize: 10,
+  color: '#e63946',
+  fontWeight: '600' as const,
+},
+legend: {
+  flexDirection: 'row' as const,
+  justifyContent: 'space-between' as const,
+  marginTop: 14,
+  backgroundColor: '#111',
+  borderRadius: 12,
+  padding: 12,
+  borderWidth: 0.5,
+  borderColor: '#1e1e2e',
+},
+legendItem: {
+  alignItems: 'center' as const,
+  gap: 4,
+},
+legendDot: {
+  width: 12,
+  height: 12,
+  borderRadius: 6,
+},
+legendLabel: {
+  fontSize: 13,
+  color: '#fff',
+  fontWeight: '600' as const,
+},
+legendRange: {
+  fontSize: 11,
+  color: '#666',
+},
+sessionCard: {
+  flexDirection: 'row' as const,
+  justifyContent: 'space-between' as const,
+  alignItems: 'center' as const,
+  backgroundColor: '#111',
+  borderRadius: 14,
+  padding: 16,
+  marginBottom: 10,
+  borderWidth: 0.5,
+  borderColor: '#1e1e2e',
+},
+sessionLeft: {
+  gap: 4,
+  flex: 1,
+},
+sessionDate: {
+  fontSize: 15,
+  fontWeight: '700' as const,
+  color: '#fff',
+},
+sessionTime: {
+  fontSize: 13,
+  color: '#777',
+},
+sessionMeta: {
+  flexDirection: 'row' as const,
+  gap: 8,
+  marginTop: 6,
+},
+metaBadge: {
+  backgroundColor: '#1e1e2e',
+  borderRadius: 8,
+  paddingHorizontal: 8,
+  paddingVertical: 3,
+},
+metaBadgeText: {
+  fontSize: 12,
+  color: '#aaa',
+  fontWeight: '500' as const,
+},
+sessionRight: {
+  alignItems: 'center' as const,
+  minWidth: 80,
+},
+sessionScore: {
+  fontSize: 32,
+  fontWeight: '800' as const,
+},
+sessionScoreLabel: {
+  fontSize: 12,
+  color: '#666',
+  fontWeight: '500' as const,
+  marginTop: 2,
+},
+emptyState: {
+  alignItems: 'center' as const,
+  paddingVertical: 48,
+  gap: 10,
+},
+emptyText: {
+  color: '#666',
+  fontSize: 16,
+  fontWeight: '600' as const,
+},
+emptySubText: {
+  color: '#444',
+  fontSize: 13,
+  textAlign: 'center' as const,
+  lineHeight: 20,
+},
+
 });

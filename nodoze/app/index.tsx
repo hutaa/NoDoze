@@ -226,7 +226,7 @@ export default function HomeScreen() {
   const [activeTab, setActiveTab] = useState('detect');
   const [showAlarmModal, setShowAlarmModal] = useState(false);
   const [selectedAlarm, setSelectedAlarm] = useState('siren');
-  const [volume, setVolume] = useState(80);
+  const [volume, setVolume] = useState(100);
 
   // --- Logic State ---
   const [permission, requestPermission] = useCameraPermissions();

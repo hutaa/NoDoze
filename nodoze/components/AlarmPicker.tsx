@@ -59,9 +59,16 @@ export default function AlarmPicker({
     if (!loopingRef.current) return;
 
     try {
-      const { sound } = await Audio.Sound.createAsync(SOUNDS[selectedAlarm]);
+      const { sound } = await Audio.Sound.createAsync(SOUNDS[selectedAlarm],
+        {
+          shouldPlay: true,
+          isLooping: false, // we'll handle looping manually to reset position
+          volume: 1.0
+        }
+
+      );
       soundRef.current = sound;
-      await sound.setVolumeAsync(volume / 100);
+      await sound.setVolumeAsync(1.0);
       await sound.playAsync();
 
       // when clip finishes, play again if still looping

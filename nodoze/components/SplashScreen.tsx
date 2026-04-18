@@ -1,13 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Image } from 'expo-image';
 
-export default function SplashScreen({ onFinish }: { onFinish: () => void }) {
-  useEffect(() => {
-    const timer = setTimeout(onFinish, 2000); // shows for 2 seconds
-    return () => clearTimeout(timer);
-  }, []);
-
+export default function SplashScreen() {
   return (
     <View style={styles.container}>
       <Image

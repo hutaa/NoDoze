@@ -175,8 +175,7 @@ export default function HomeScreen() {
           {/* Camera */}
           <View style={[
             styles.cameraWrapper,
-            { flex: 0, height: '52%' },
-            isDrowsy && { borderColor: colors.red, borderWidth: 2 }
+            { borderColor: isDrowsy ? colors.red : colors.green, borderWidth: 2 }
           ]}>
             <CameraView
               ref={cameraRef}
@@ -185,12 +184,18 @@ export default function HomeScreen() {
               onCameraReady={() => setIsCameraReady(true)}
             />
             <View style={StyleSheet.absoluteFill} pointerEvents="none">
-              <View style={[styles.corner, styles.cornerTL, isDrowsy && { borderColor: colors.red }]} />
-              <View style={[styles.corner, styles.cornerTR, isDrowsy && { borderColor: colors.red }]} />
-              <View style={[styles.corner, styles.cornerBL, isDrowsy && { borderColor: colors.red }]} />
-              <View style={[styles.corner, styles.cornerBR, isDrowsy && { borderColor: colors.red }]} />
-              <View style={styles.scanLabel}>
-                <Text style={[styles.scanText, isDrowsy && { color: colors.red }]}>
+              <View style={[styles.corner, styles.cornerTL, { borderColor: isDrowsy ? colors.red : colors.green }]} />
+              <View style={[styles.corner, styles.cornerTR, { borderColor: isDrowsy ? colors.red : colors.green }]} />
+              <View style={[styles.corner, styles.cornerBL, { borderColor: isDrowsy ? colors.red : colors.green }]} />
+              <View style={[styles.corner, styles.cornerBR, { borderColor: isDrowsy ? colors.red : colors.green }]} />
+              <View style={[
+                styles.scanLabel,
+                { borderColor: isDrowsy ? colors.red : colors.green }
+              ]}>
+                <Text style={[
+                  styles.scanText,
+                  { color: isDrowsy ? colors.red : colors.green }
+                ]}>
                   {isDrowsy ? "DROWSINESS DETECTED" : "SCANNING EYES"}
                 </Text>
               </View>

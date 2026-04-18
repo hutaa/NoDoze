@@ -106,11 +106,11 @@ export const styles = StyleSheet.create({
     borderRadius: 14,
     padding: 12,
   },
-  statLabel: { color: colors.muted, fontSize: 10, textTransform: 'uppercase', letterSpacing: 0.6, marginBottom: 4 },
+  statLabel: { color: colors.muted, fontSize: 16, textTransform: 'uppercase', letterSpacing: 0.6, marginBottom: 4 },
   statValue: { color: colors.white, fontSize: 22, fontWeight: '600', lineHeight: 24 },
   statPercent: { color: colors.green, fontSize: 13 },
   statValueAlert: { color: colors.red },
-  statUnit: { color: colors.faint, fontSize: 10, marginTop: 3 },
+  statUnit: { color: colors.faint, fontSize: 16, marginTop: 3 },
 
   // Alert bar
   alertBar: {

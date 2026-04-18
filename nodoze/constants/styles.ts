@@ -173,6 +173,7 @@ export const styles = StyleSheet.create({
     zIndex: 100,
   },
   modalSheet: {
+    marginTop: '40%',
     backgroundColor: '#13131a',
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,

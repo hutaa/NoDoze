@@ -20,7 +20,7 @@ export default function SplashScreen({ onFinish }: { onFinish: () => void }) {
   return (
     <Animated.View style={[styles.container, { opacity: fadeAnim }]}>
       <Image
-        source={require('../assets/images/NoDoze.svg')}
+        source={require('../assets/images/NoDoze.png')}
         style={styles.logo}
         contentFit="contain"
       />

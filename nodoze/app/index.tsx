@@ -24,7 +24,7 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <Stack.Screen options={{ headerShown: false }} />
-
+      // Camera
       <CameraView style={styles.camera} facing="front">
         <View style={styles.overlay}>
           <Text style={styles.title}>NoDoze</Text>

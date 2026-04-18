@@ -10,6 +10,7 @@ const SOUNDS: Record<string, any> = {
   horn:   require('../assets/sounds/horn.mp3'),
   buzzer: require('../assets/sounds/buzzer.mp3'),
   voice:  require('../assets/sounds/voice.mp3'),
+  reveille:  require('../assets/sounds/reveille.mp3'),
 };
 
 export const ALARMS = [
@@ -18,6 +19,7 @@ export const ALARMS = [
   { key: 'horn',    name: 'Car Horn',         desc: 'Realistic horn blast',                      icon: 'car-outline' },
   { key: 'buzzer',  name: 'Buzzer',           desc: 'Classic alarm buzzer',                      icon: 'notifications-outline' },
   { key: 'voice',   name: 'Faaa',      desc: '"Faaaa"',        icon: 'mic-outline' },
+  { key: 'reveille',   name: 'Reveille',      desc: '"Military call"',        icon: 'mic-outline' },
   { key: 'vibrate', name: 'Vibrate Only',     desc: 'Silent — vibration pattern only',           icon: 'phone-portrait-outline' },
 ];
 

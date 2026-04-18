@@ -33,6 +33,7 @@ export default function HomeScreen() {
   const [isDrowsy, setIsDrowsy] = useState(false);
   const [isCameraReady, setIsCameraReady] = useState(false);
   const cameraRef = useRef<CameraView>(null);
+  const [alertCount, setAlertCount] = useState(0);
 
   // --- Alarm refs ---
   const alarmSoundRef = useRef<Audio.Sound | null>(null);
@@ -68,6 +69,10 @@ export default function HomeScreen() {
   // --- Auto-trigger alarm when drowsy ---
   useEffect(() => {
     if (isDrowsy) {
+      // prevents duplicate increments if already in drowsy state
+      if (!alarmLoopingRef.current) {
+        setAlertCount(prev => prev + 1);
+      }
       alarmLoopingRef.current = true;
       if (selectedAlarm === 'vibrate') {
         Vibration.vibrate([500, 300, 500, 300, 500], true);
@@ -78,6 +83,8 @@ export default function HomeScreen() {
       }
     } else {
       stopAlarm();
+      // set up to trigger again next time
+      alarmLoopingRef.current = false;
     }
   }, [isDrowsy]);
 
@@ -198,7 +205,7 @@ export default function HomeScreen() {
         <View style={styles.statCard}>
           <Text style={styles.statLabel}>Alerts</Text>
           <Text style={[styles.statValue, isDrowsy && styles.statValueAlert]}>
-            {isDrowsy ? "1" : "0"}
+            {alertCount}
           </Text>
           <Text style={styles.statUnit}>this session</Text>
         </View>
